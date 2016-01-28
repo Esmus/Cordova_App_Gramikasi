@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+
+.lista h3 {
+	text-align: center;
+}
+
+.lista img {
+	float: left;
+	padding: 0px;
+}
+
+#image-0{
+	
+	padding-right: 30px;
+	
+}
+
+
+#myPanel{
+	
+	background-color: #58FAF4 !important;
+}
+.pagina-0{
+	
+	background-color: #58FAF4 !important;
+	
+}
+
+.pregunta{
+	
+	
+	background-color: #58FAF4 !important;
+}

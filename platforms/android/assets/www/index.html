@@ -1,0 +1,357 @@
+<!-- GRAMIKASI
+-->
+
+<!DOCTYPE html>
+<html>
+     <head>
+    	<script src="js/jquery-2.0.2.js"></script>
+    	<script src="js/jquery.mobile-1.4.5.js"></script>
+   	    <script src="js/d3.js"></script>  
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
+    	<link rel="stylesheet" type="text/css" href="css/tematicas.css" />
+    	  <meta http-equiv="Content-Security-Policy" content="media-src 'self' http://192.168.0.38:8080 http://10.107.29.53:8080 http://158.227.56.135:8080 http://ehutb-flash1-pro.ehu.es;
+   															connect-src http://192.168.0.38:8080 http://10.107.29.53:8080 http://158.227.56.135:8080;"/>
+    	
+        <title>TTA1516_LS-EX_08v5</title>
+    </head>
+    
+    <body>
+    
+   							 <!--PÁGINA INICIAL-->
+	<div data-role="page" id="inicio-0" class="pagina">
+			<div data-role="header">
+				<h1 style="text-align: center;color: green;">GRAMIKASI</h1>
+			</div>
+	
+		<div data-role="main" class="ui-content">
+				<div>
+				<h2 style="text-align: left;color: green;">Iniciar Sesion</h2>
+				<label for="nick">NickName:</label>
+    			<input type="text" name="nombre" id="nickname-0">
+				<a  class="ui-btn"  id ="sesion-1"   "data-transition="slide"  style="" onclick="inicio()">Submit</a>
+				<a href="#page-1" class="ui-btn"  style="display: none"  id="sesion-2" data-transition="slide" onclick="">IniciarApp</a>
+			   </div>
+
+				<div>
+				<h2 style="text-align: left;color: green;">Nuevo Usuario</h2>
+				<a href="#page-0" class="ui-btn"   data-transition="slide" onclick="">Registrarse</a>
+				</div>
+			</div>
+	
+		<div data-role="footer" data-position="fixed" style="padding-top:1%;">
+				<h1 style="text-align: center;color: green;">REGISTRO USUARIO</h1>
+		</div>
+	
+	</div>
+										
+								<!--FIN PAGINA INICIAL-->
+    
+    
+ 
+    
+    						<!--PÁGINA REGISTRO-->
+		<div data-role="page" id="page-0" class="pagina-0">
+			<div data-role="header">
+				<h1 style="text-align: center;color: green;">GRAMIKASI</h1>
+			</div>
+	
+		<div data-role="main" class="ui-content">
+				<label for="nombre">Nombre:</label>
+    			<input type="text" name="nombre" id="registro-0">
+    			<div class="ui-grid-a">
+      				<div class="ui-block-a">
+      					<label for="apellido1">Primer Apellido:</label>
+    					<input type="text" name="apellido1" id="registro-1">
+      				</div>
+     				<div class="ui-block-b">
+      				    <label for="apellido2">Segundo Apellido:</label>
+    					<input type="text" name="apellido2" id="registro-2">
+					</div>
+				</div>
+				<label for="nick">NickName:</label>
+    			<input type="text" name="nick" id="registro-3" placeholder="Itziar001...">    			
+				<label for="slider-fill">Edad:</label>
+				<input type="range" name="slider-fill" id="slider-fill" value="0" min="6" max="12" data-highlight="true" />
+				<label for="profe">Profesora:</label>
+    			<input type="text" name="profesor" id="registro-4">
+    			<a href="" id="button-0" class="ui-btn" onclick="takePhoto()">SacarFoto</a>
+				<a  class="ui-btn" id="login-0" style="display: none" data-transition="slide" onclick="login()">Submit</a>
+				<a href="#page-1" class="ui-btn" id="login-5"  style="display: none" data-transition="slide" onclick="moverFoto()">ComenzarSesion</a>
+				
+    		
+   		</div>
+		<div data-role="footer" data-position="fixed" style="padding-top:1%;">
+				<h1 style="text-align: center;color: green;">REGISTRO USUARIO</h1>
+		</div>
+	
+	</div>
+										
+								<!--FIN PÁGINA REGISTRO-->
+
+								<!--PÁGINA PRINCIPAL-->
+		<div data-role="page" id="page-1"  data-theme="a" class="pagina">
+			  <div data-role="panel" id="myPanel"> 
+    				<div data-role="header" data-theme="b">
+						<h1 style="text-align: center;color: green;">MENU</h1>
+					</div>
+    				<div data-role="controlgroup" data-corners="false">
+	           		 <a href="#page-2" data-role="button">Tematicas1</a></br>
+	           		 <a href="#page-3" data-role="button" >Tematicas2</a>
+	   				 </div>
+  			  </div> 
+
+			<div data-role="header" class="pagina">
+				<h1 style="text-align: center;color: green;">GRAMIKASI</h1>
+				<a href="#myPanel" id="bars-button" class="ui-btn ui-corner-all ui-shadow ui-icon-bars ui-btn-icon-left"  >Menu</a>
+				<a href="#inicio-0" id="bars-button-0" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" onclick="loginoff()"  >Inicio</a>
+			</div>
+	
+		<div data-role="main" class="ui-content">
+				
+		<img alt="" src="" id="image-0" class="imagenPrin">
+		<h3 id="nombre-1" class="nombreNino" style="text-align: center;color: green"> </h3>
+		<a class="ui-btn" id="enviarFoto" data-transition="slide" onclick="subirFoto()">EnviarFoto</a>
+				
+				
+    	</div>
+   
+		<div data-role="footer" id="footer-1" data-position="fixed" style="padding-top:1%;">
+				<h1 style="text-align: center;color: green;" class="footer-1"></h1>
+		</div>
+	</div>
+
+
+								<!--FIN PÁGINA PRINCIPAL-->
+								
+
+								<!--PÁGINA TEST1-->
+								
+	<div data-role="page" id="page-2"  data-theme="a" class="pagina">
+			<div data-role="header">
+				<h1 style="text-align: center;color: green;">GRAMIKASI</h1>
+				
+				<a href="#page-1" id="" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-right">Home</a>
+			</div>
+	
+		<div data-role="main" class="ui-content" >
+				<h2 style="color: green">Selecciona un tema: </h2>
+				
+				<ul data-role="listview" class="lista">
+  					<li>
+  						<a href="#plantilla-0"   class="ui-btn ui-icon-carat-r ui-btn-icon-right"  >
+  							<img id="foto-0" alt="" src="" >
+  							<h3 id="tema-0"></h3>
+  						</a>
+  					</li>
+  					<li>
+  						<a href="#plantilla-1" class="ui-btn ui-icon-carat-r ui-btn-icon-right"  >
+  							<img id="foto-1" alt="" src="" >
+  							<h3 id="tema-1"></h3>
+  						</a>
+  					</li>
+  					<li>
+  						<a href="#plantilla-2" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >
+  							<img  id="foto-2" alt="" src="" >
+  							<h3 id="tema-2"></h3>
+  						</a>
+  					</li>
+  					<li>
+          				<a href="#plantilla-3" class="ui-btn ui-icon-carat-r ui-btn-icon-right" > 
+  							<img id="foto-3" alt="" src="" >
+  							<h3 id="tema-3"></h3>
+  						</a>
+  					</li>
+  				
+  		
+				</ul>		
+    	</div>
+   
+		<div data-role="footer" id="footer-1" data-position="fixed" style="padding-top:1%;">
+				<h1 style="text-align: center;color: green;" class="footer-1"></h1>
+		</div>
+	</div>						
+			
+								<!--FIN PÁGINA TEST1-->
+								
+								
+								<!--PÁGINA TEST2-->
+								
+	<div data-role="page" id="page-3"  data-theme="a" class="pagina">
+			<div data-role="header">
+				<h1 style="text-align: center;color: green;">GRAMIKASI</h1>
+				<a href="#page-1" id="" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-right">Home</a>
+			</div>
+	
+		<div data-role="main" class="ui-content"  >
+			<h2 style="color: green">Selecciona un tema: </h2>
+				
+				<ul data-role="listview" class="lista">
+  					<li>
+  						<a href="#plantilla-4"   class="ui-btn ui-icon-carat-r ui-btn-icon-right"  >
+  							<img id="foto-4" alt="" src="" >
+  							<h3 id="tema-4"></h3>
+  						</a>
+  					</li>
+  					<li>
+  						<a href="#plantilla-5" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >
+  							<img id="foto-5" alt="" src="" >
+  							<h3 id="tema-5"></h3>
+  						</a>
+  					</li>
+  					<li>
+  						<a href="#plantilla-6" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >
+  							<img id="foto-6" alt="" src="" >
+  							<h3 id="tema-6"></h3>
+  						</a>
+  					</li>
+  				
+  				
+  					
+  		
+				</ul>
+		
+    	</div>
+   
+		<div data-role="footer" id="footer-1" data-position="fixed" style="padding-top:1%;">
+				<h1 style="text-align: center;color: green;" class="footer-1"></h1>
+		</div>
+	</div>						
+			
+								<!--FIN PÁGINA TEST3-->
+								
+		
+								
+								
+									<!-- PÁGINA RESULTADOS TEST-->
+								
+	<div data-role="page" id="resultadoAreaP"  data-theme="a"  class="resultadosTest" class="pagina">
+			<div data-role="header">
+				<h1 style="text-align: center;color: green;">GRAMIKASI</h1>
+				<a href="#page-1" id="" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-right" onclick="borrarTest()">Finalizar</a>
+				<a href="#ultimosResultados-0" id="" class="ui-btn ui-corner-all ui-shadow ui-icon-carat-r ui-btn-icon-right" onclick="crearGrafica(0)">Gráfica1</a>
+			</div>
+	
+		<div data-role="main" class="ui-content" id="divCorreccion"   >
+		
+			<h2>Resultados del Test</h2>
+			<ul data-role="listview" class="lista">
+				<li class="area-0">
+					<h3>Area:1 </h3>
+					<p>Correctas: </p>
+					<p>Erroneas: </p>
+				</li>
+				<li class="area-1">
+					<h3>Area:2 </h3>
+					<p>Correctas: </p>
+					<p>Erroneas: </p>
+				</li>
+				<li class="area-2">
+					<h3>Area:3 </h3>
+					<p>Correctas: </p>
+					<p>Erroneas: </p>
+				</li>
+				<li class="area-3">
+					<h3>Area:4 </h3>
+					<p>Correctas: </p>
+					<p>Erroneas: </p>
+				</li>
+				<li class="area-4">
+					<h3>Area:5 </h3>
+					<p>Correctas: </p>
+					<p>Erroneas: </p>
+				</li>
+				<li class="area-5">
+					<h3>Area:6 </h3>
+					<p>Correctas: </p>
+					<p>Erroneas: </p>
+				</li>
+				
+		
+			</ul>
+			
+		
+    	</div>
+   
+		<div data-role="footer" id="footer-1" data-position="fixed" style="padding-top:1%;">
+				<h1 style="text-align: center;color: green;">Resultados Test</h1>
+		</div>
+	</div>						
+			
+			
+			
+			
+			
+								
+									<!-- FINPÁGINA RESULTADOS TEST-->
+			
+			
+			
+	<div data-role="page" id="ultimosResultados-0"  data-theme="a" class="pagina"  >
+			<div data-role="header">
+				<h1 style="text-align: center;color: green;">GRAMIKASI</h1>
+				<a  class="graficas" href="#resultadoAreaP" id="" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" >Atras</a>
+				<a href="#ultimosResultados-1" id="" class="ui-btn ui-corner-all ui-shadow ui-icon-carat-r ui-btn-icon-right" onclick="crearGrafica(1)">Gráfica2</a>
+			</div>
+	
+		<div data-role="main" class="ui-content"   >
+		
+			<h2>Gráfica Aciertos: </h2>
+			
+			<div >
+				<svg id="visualisation" width="1000" height="500"></svg>
+			</div>Musica
+
+		
+    	</div>
+   
+   
+		<div data-role="footer" id="footer-1" data-position="fixed" style="padding-top:1%;">
+				<h1 style="text-align: center;color: green;">Resultados Tests</h1>
+		</div>
+		
+		
+	</div>			
+	
+	<div data-role="page" id="ultimosResultados-1"  data-theme="a"  class="pagina">
+			<div data-role="header">
+				<h1 style="text-align: center;color: green;">GRAMIKASI</h1>
+				<a class="graficas" href="#resultadoAreaP" id="" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" >Atras</a>
+				
+			</div>
+	
+		<div data-role="main" class="ui-content"   >
+		
+			<h2>Gráfica Erroneas: </h2>
+			
+			<div >
+				<svg id="visualisation2" width="1000" height="500"></svg>
+			</div>
+
+		
+    	</div>
+   
+   
+		<div data-role="footer" id="footer-1" data-position="fixed" style="padding-top:1%;">
+				<h1 style="text-align: center;color: green;">Resultados Tests</h1>
+		</div>
+		
+		
+	</div>				
+			
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/objects.js"></script>        
+        <script type="text/javascript" src="js/functions.js"></script>        
+        <script type="text/javascript" src="js/index.js"></script>     
+        <script type="text/javascript" src="js/usuarios.js"></script>   
+        <script type="text/javascript" src="js/servidor.js"></script>    
+        <script type="text/javascript" src="js/resultados.js"></script> 
+                 
+                
+        
+  
+    </body>
+</html>
